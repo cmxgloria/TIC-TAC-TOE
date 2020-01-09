@@ -45,3 +45,9 @@ h2 {
   width: 120px;
   margin: 20px;
 }
+footer {
+  font-size: 30px;
+  margin: 10px;
+  color: red;
+  justify-content: center;
+}
