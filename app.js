@@ -49,10 +49,12 @@ function getWinner() {
   // includes() whether array includes a certain value among its entries,return true n false.
   if (winner) {
     return winner;
-  } else if (board.includes("")) {
-    return winner;
+  }
+  //add board.includes('') to return null, otherwise at the beginning it show no body win before we get someone win
+  else if (board.includes("")) {
+    return null;
   } else {
-    return "nobody";
+    return "noWinning";
   }
 }
 
@@ -63,7 +65,7 @@ function render() {
   });
   // Conditional chains, like if,else if, else if, else
   messages.textContent =
-    win === "nobody"
+    win === "noWinning"
       ? "No body win,please play again."
       : win
       ? `${win} wins the game!`
