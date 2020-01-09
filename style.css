@@ -1,0 +1,48 @@
+body {
+  text-align: center;
+}
+h1 {
+  border: 2px solid salmon;
+  background-color: aquamarine;
+}
+h2 {
+  margin: 0 auto;
+  font-size: 30px;
+  margin: 15px;
+  background-color: lightgrey;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+  /* each square lenght + 2*board */
+  height: 462px;
+  width: 462px;
+}
+
+.square {
+  border: 2px solid rgba(0, 0, 0, 0.75);
+  height: 150px;
+  width: 150px;
+  font-size: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#reset-button {
+  text-align: center;
+  font-size: 30px;
+  font: bold;
+  border: 1px solid darkgrey;
+  background-color: antiquewhite;
+  height: 65px;
+  width: 120px;
+  margin: 20px;
+  float: left;
+}
