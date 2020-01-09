@@ -59,6 +59,7 @@ function getWinner() {
 }
 
 function render() {
+  //without this we can not reset
   board.forEach(function(marks, index) {
     //set the text content of the square of the same position to the marks on the board.
     squares[index].textContent = marks;
