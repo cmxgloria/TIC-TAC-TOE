@@ -1,10 +1,9 @@
-// handleTurn function , X and O render, render() to see who win, Win logic,
+// handleTurn function, getWinner(), render(), reset() to see who win, Win logic,
 // 3 (rows) + 3 (columns) + 2 (diagonals) = 8 possible ways to win
-
 let turn = "X";
 let board = null;
 let win = null;
-const winGame = [
+let winGame = [
   [0, 1, 2],
   [3, 4, 5],
   [6, 7, 8],
@@ -30,6 +29,7 @@ function handleTurn(event) {
   event.target.textContent = turn;
   win = getWinner();
   render();
+  document.querySelector("#board").style.backgroundColor = "lightblue";
 }
 document.querySelector("#board").addEventListener("click", handleTurn);
 
@@ -37,7 +37,7 @@ document.querySelector("#board").addEventListener("click", handleTurn);
 function getWinner() {
   let winner = null;
   // loop through winGame, if 3 select match then win
-  winGame.forEach(function(element, index) {
+  winGame.forEach(function(element) {
     //handle X or O match row or column or diagonal in any WinGame element then win the game
     if (
       board[element[0]] &&
@@ -72,10 +72,10 @@ function render() {
       : `It's ${turn}'s turn!`;
 }
 //init function to point each position in the JS array will correspond to a square on the HTML board
-function init() {
+function reset() {
   board = ["", "", "", "", "", "", "", "", ""];
   render();
 }
-init();
+reset();
 
-document.querySelector("#reset-button").addEventListener("click", init);
+document.querySelector("#reset-button").addEventListener("click", reset);
