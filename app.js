@@ -75,6 +75,7 @@ function render() {
 //init function to point each position in the JS array will correspond to a square on the HTML board
 function reset() {
   board = ["", "", "", "", "", "", "", "", ""];
+  turn.textContent = turn;
   render();
 }
 reset();
