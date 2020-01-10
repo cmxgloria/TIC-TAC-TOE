@@ -60,6 +60,7 @@ function getWinner() {
   render();
 }
 
+// render h2 messages
 function render() {
   //without this we can not reset
   board.forEach(function(marks, index) {
@@ -74,7 +75,7 @@ function render() {
       ? `${win} wins the game!`
       : `It's ${turn}'s turn!`;
 }
-//init function to point each position in the JS array will correspond to a square on the HTML board
+//reset function to point each position in the JS array will correspond to a square on the HTML board
 function reset() {
   board = ["", "", "", "", "", "", "", "", ""];
   turn.textContent = turn;
