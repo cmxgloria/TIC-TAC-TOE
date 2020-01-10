@@ -1,4 +1,4 @@
-// handleTurn(), getWinner(), render(), reset() to see who win, Win logic,
+// handleTurn(), getWinner(), messageShow(), reset() to see who win, Win logic,
 // 3 (rows) + 3 (columns) + 2 (diagonals) = 8 possible ways to win
 let turn = "X";
 let board = null;
@@ -24,12 +24,12 @@ function handleTurn(event) {
   let indexSquare = squares.findIndex(function(square) {
     return square === event.target;
   });
-  //render that turn on board
+  //messageShow that turn on board
   board[indexSquare] = turn;
   turn = turn === "X" ? "O" : "X";
   event.target.textContent = turn;
   win = getWinner();
-  render();
+  messageShow();
   document.querySelector("#board").style.backgroundColor = "lightblue";
 }
 document.querySelector("#board").addEventListener("click", handleTurn);
@@ -57,11 +57,11 @@ function getWinner() {
   } else {
     return "noWinning";
   }
-  render();
+  messageShow();
 }
 
-// render h2 messages
-function render() {
+// messageShow() h2 messages
+function messageShow() {
   //without this we can not reset
   board.forEach(function(marks, index) {
     //set the text content of the square of the same position to the marks on the board.
@@ -79,7 +79,7 @@ function render() {
 function reset() {
   board = ["", "", "", "", "", "", "", "", ""];
   turn.textContent = turn;
-  render();
+  messageShow();
 }
 reset();
 
