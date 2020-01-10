@@ -1,4 +1,4 @@
-// handleTurn function, getWinner(), render(), reset() to see who win, Win logic,
+// handleTurn(), getWinner(), render(), reset() to see who win, Win logic,
 // 3 (rows) + 3 (columns) + 2 (diagonals) = 8 possible ways to win
 let turn = "X";
 let board = null;
@@ -13,19 +13,20 @@ let winGame = [
   [0, 4, 8],
   [2, 4, 6]
 ];
-// find all 9 boards div children in squares
+
+//find all 9 boards div children using querySelectorAll and use Array.from() to create squares array
 const squares = Array.from(document.querySelectorAll("#board div"));
 const messages = document.querySelector("h2");
 
-//  handleTurn() function to call getWinner() and assign its output to the win variable
+//  handleTurn() function and call getWinner() and assign its output to the win variable
 function handleTurn(event) {
   // find index of square in squares array to match event.target
   let indexSquare = squares.findIndex(function(square) {
     return square === event.target;
   });
+  //render that turn on board
   board[indexSquare] = turn;
   turn = turn === "X" ? "O" : "X";
-  //render that turn
   event.target.textContent = turn;
   win = getWinner();
   render();
@@ -44,7 +45,7 @@ function getWinner() {
       board[element[0]] === board[element[1]] &&
       board[element[0]] === board[element[2]]
     )
-      winner = board[element[0]];
+      return (winner = board[element[0]]);
   });
   // includes() whether array includes a certain value among its entries,return true n false.
   if (winner) {
@@ -56,6 +57,7 @@ function getWinner() {
   } else {
     return "noWinning";
   }
+  render();
 }
 
 function render() {
