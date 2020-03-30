@@ -1,5 +1,6 @@
 body {
   text-align: center;
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcSC3qLGY5gwfaL6R7XemSEsRgt-KLbRGBwA2JuK5MI65ndZy0&s");
 }
 h1 {
   border: 2px solid salmon;
@@ -9,7 +10,9 @@ h2 {
   margin: 0 auto;
   font-size: 30px;
   margin: 15px;
-  background-color: lightgrey;
+  background-color: coral;
+  animation-name: spin;
+  animation-duration: 2s;
 }
 
 .flex-container {
